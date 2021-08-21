@@ -1,0 +1,61 @@
+
+   <!DOCTYPE html>
+
+<head>
+    <style>
+    .mycircle{
+            stroke: #f00;
+            fill:rgba(0,0,0,0);
+            stroke-width: 10px;
+            stroke-dasharray: 0  1000;
+    }
+    .txt{
+            text-anchor: middle;
+                         /* The text is centered horizontally */
+            dominant-baseline: middle;
+                         /* The text is centered vertically */
+            font-size: 30px;
+            font-family: Arial;
+}
+.txt.txt2{
+            font-size:18px;
+}
+    </style>
+   
+</head>
+
+<body>
+        <svg width="220" height="220" viewBox="0 0 220 220"
+        xmlns="http://www.w3.org/2000/svg">
+       <defs>
+           <linearGradient id="orange_red" x1="0%" y1="0%" x2="100%" y2="100%">
+               <stop offset="0%" style="stop-color:rgb(255,255,0);stop-opacity:1"></stop>
+              
+               <stop offset="100%" style="stop-color:rgb(255,0,0);stop-opacity:1"></stop>
+           </linearGradient>
+       </defs>
+    
+       <circle cx="110"  cy="110"   r = "100"
+               fill="none"  stroke="#eee" stroke-width="20"
+           ></circle>
+       <circle cx="0"  cy="0"   r = "100" class="mycircle" id="progressRound"
+               transform="translate(110,110) rotate(-90)"
+       ></circle>
+       <text x="0" y="0" fill="red" class="txt" id="txt"
+             transform="translate(110,100)"
+       >0%</text>
+       <text x="0" y="0" fill="#555" class="txt txt2"
+             transform="translate(110,130)"
+       >CPU share</text>
+   </svg>
+   <svg width="300" height="300" viewBox="0 0 300 300">
+        <path d="m240 300 A20 20 80 10 80 240 260" stroke="red" stroke-width="10" fill="none"/>
+   </svg>
+
+   <svg width="190" height="160" xmlns="http://www.w3.org/2000/svg">
+    <path d="M 10 90 Q 95 10 260 260" stroke="black" fill="transparent"/>
+  </svg>
+  <script src="js/svgcircle.js"></script>
+</body>
+
+</html>
