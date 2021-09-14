@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <script>
+            //syntax
+         /*   switch(expression){
+                case <condition>:
+                    //statements
+                break;
+                case <condition>:
+                    //statements
+                break;
+                case <condition>:
+                    //statements
+                break;
+                case <condition>:
+                    //statements
+                break;
+                ....
+                ..
+
+                default:
+                    //statements
+                 
+            }*/
+            function setText(resText){
+                document.getElementById('numText').value=resText;
+            }
+            function showTextvalue(){
+                var inpValue=document.getElementById('a').value;
+                switch (Number(inpValue)){
+                    case 1:
+                    setText("One");
+                   break;
+                   case 2:
+                   setText("Two");
+                   break;
+                   case 3:
+                   setText("Three");
+                   break;
+                   case 4:
+                   setText("Four");
+                   break;
+                   case 5:
+                   setText("Five");
+                   break;
+                   default:
+                   setText("The value is Above Five"); 
+                }
+            }
+              
+
+        </script>
+       
+    </head>
+    <body onload="bindu()">
+        <h1>swtich</h1>
+      <label>Enter A Value</label>  <input type="text" id="a"><br>
+     
+        <input type="button" onclick="showTextvalue()" value="showText"><br>
+        <label>show text number</label>  <input type="text" id="numText"><br>
+       
+    </body>
+</html>

@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <script>
+            //old
+        /* function test(){
+            var a=10;
+            console.log(a);
+             function bindu(){
+                a=a+1;
+                console.log("bindu",a);
+            };
+            return bindu;
+         }*/
+
+        /*function test(){
+            var a=10;
+            console.log(a);
+            
+             return function(){
+                a=a+1;
+                console.log("bindu",a);
+            };
+         }*/
+
+
+         function test(){
+            var a=10;
+            console.log(a);
+            
+             return ()=>{
+                a=a+1;
+                console.log("bindu",a);
+            };
+         }
+    
+    var counter=test();
+    counter();
+    counter();
+    counter();
+    counter();
+
+ /*   test=(sd)=>{
+        console.log("asdfa");
+        return "sdd"
+    }
+
+    test=()=>{
+
+    }*/
+        </script>
+    </head>
+    <body>
+        <h1>class5</h1>
+        <div id="container"></div>
+    </body>
+</html>

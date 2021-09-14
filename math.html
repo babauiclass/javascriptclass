@@ -1,0 +1,34 @@
+<html>
+    <head>
+       
+    </head>
+    <body>
+        <h1>Math functions</h1>
+        <div id="container"></div>
+        <div id="rndCon"></div>
+        <div id="absCon"></div>
+        <button id="myBtn">GenRanDom</button>
+        <script>
+            let roundVal=Math.round(0.5);
+            document.getElementById("container").innerHTML="<h1> Round Value is:"+roundVal+"</h1>";
+           //const absvalue=Math.abs(-32);//32
+          //  const absvalue=Math.floor(38.95); // 38
+           // const absvalue=Math.ceil(38.2); // 39
+           const absvalue=Math.sin(90); // 
+            document.getElementById("absCon").innerHTML="<h1> Round Value is:"+absvalue+"</h1>";
+
+            let myBtnEle = document.getElementById("myBtn");
+            var randConEle =  document.getElementById("rndCon");
+            var randGen=(max,min)=>{
+                const randomValue= Math.round(Math.random() * (max-min))+min;
+                return randomValue;
+            }
+            myBtnEle.addEventListener("click",()=>{
+                const randomValue = randGen(10,5);
+                randConEle.innerHTML="<h1> Random Value is:"+randomValue+"</h1>";
+            })
+            
+           
+        </script>
+    </body>
+</html>

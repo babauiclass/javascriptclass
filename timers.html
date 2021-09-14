@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+   <script>
+       //setTimeout
+        //setInterval
+        //clearTimeout
+        //clearInterval
+ //setTimeout(<functionname>,mseconds,params);
+   var cnt=0;
+    function test(){
+        console.log("Hi Hello");
+        console.log("count",cnt);
+       cnt+=1;
+       if(cnt>=5){
+           clearInterval(sid);
+       }
+    }
+ 
+var sid=setInterval(test,1000);
+ 
+   </script>
+</head>
+<body>
+<h1>welcome to javascript</h1>
+<h2 id="msg">   </h2>
+<div id="container"></div>
+</body>
+</html>
+
