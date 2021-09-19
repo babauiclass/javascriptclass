@@ -1,0 +1,20 @@
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <h1>class6</h1>
+        <div id="container"></div>
+        <div id="names"></div>
+        <script>
+            function double(a,callBack){
+                const doubVal=a*2;
+                callBack(doubVal);
+            }
+            function myFnc(res){
+                console.log("Result is:",res);
+            }
+            double(20,myFnc);
+        </script>
+    </body>
+</html>

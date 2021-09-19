@@ -1,0 +1,59 @@
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <h1>class</h1>
+        <div id="container"></div>
+        <script>
+            class StudentMarks{
+                constructor(m,p,c){
+                    this.maths=m;
+                    this.phy=p;
+                    this.che=c;
+                }
+                getResult(){
+                    if(this.maths>=35 && this.phy>=35 && this.che>=35){
+                        console.log("pass");
+                    }else{
+                        console.log("fail");
+                    }
+                }
+                getMaths(){
+                    console.log("math marks:",this.maths);
+                }
+            }
+            class Student extends StudentMarks{
+                name;
+                age;
+                rollno;
+                static stdentName="HelloWorlds";
+                constructor(name,lastname,age,rollno,m,p,c){
+                    super(m,p,c);
+                    this.name=name;
+                    this.lastName=lastname;
+                    this.age=age;
+                    this.rollno=rollno;
+                }
+                static getClassInfo(){
+                    console.log("This is Stdent Class",Student.stdentName);
+                }
+                getFullname(){
+                    const fullname=this.name+this.lastName;
+                    console.log("fullname:"+fullname);
+                    //return fullname;
+                }
+                getAge(){
+                    console.log("age:",this.age);
+                }
+            }
+           var stuObj=new Student("ravi","kumar",14,4545,36,56,67);
+            stuObj.getFullname();
+            stuObj.getAge();
+            stuObj.getResult();
+            stuObj.getMaths();
+           console.log(stuObj.name);
+           Student.getClassInfo();
+        </script>
+    </body>
+</html>

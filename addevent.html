@@ -1,0 +1,37 @@
+<html>
+    <head>
+      <style>
+          .container{
+              width: 200px;
+              height: 200px;
+              background-color: red;
+          }
+          .newDiv{
+            width: 150px;
+              height: 100px;
+              background-color:blueviolet;
+          }
+      </style>
+    </head>
+    <body>
+        <h1>class4</h1>
+        <div class="container" id="divCon" onclick="changeDivColor()"></div>
+        <br>
+        <div class="newDiv" id="newDivCon"></div>
+        <script>
+            function changeDivColor(){
+                let myDivCon=document.getElementById("divCon");
+                myDivCon.style.backgroundColor="blue";
+            }
+            var newDivEle=document.getElementById("newDivCon");
+            newDivEle.addEventListener("click",newDivColor);
+            function newDivColor(){
+               newDivEle.style.backgroundImage="url('./images/img3.jpg')"; 
+               newDivEle.style.backgroundSize = "60px 50px";
+               newDivEle.style.backgroundRepeat="no-repeat" ;
+               //newDivEle.style.backgroundColor="green"
+            }
+           
+        </script>
+    </body>
+</html>

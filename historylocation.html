@@ -1,0 +1,46 @@
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <h1>his loca</h1>
+        <div id="container"></div>
+        <h1 id="msg1"></h1>
+        <h1 id="msg2"></h1>
+        <h1 id="msg3"></h1>
+        <h1 id="msg4"></h1>
+        <button onclick="gotoPage()"> gotoDivBgPage</button>
+        <button id="newPage"> gotoswitch</button>
+        <button onclick="gotoBack()">backBtn</button>
+        <button onclick="gotoForward()">forward</button>
+
+        <script>
+           let hrefData=window.location.href;
+           document.getElementById("msg1").innerHTML="href:"+hrefData;
+
+           let hostData=window.location.host;
+           document.getElementById("msg2").innerHTML="host : "+hostData;
+
+           let hostName=window.location.hostname;
+           document.getElementById("msg3").innerHTML="hostName : "+hostName;
+
+           let proData=window.location.protocol;
+           document.getElementById("msg4").innerHTML="protocol : "+proData;
+
+
+            function gotoBack(){
+                window.history.back();
+            }
+            function gotoForward(){
+                window.history.forward();
+            }
+            function gotoPage(){
+                window.location="addevent.html";
+            }
+         var myNewPageBtn = document.getElementById("newPage");
+         myNewPageBtn.addEventListener("click",function(){
+            window.location="switch.html"; 
+         })
+        </script>
+    </body>
+</html>

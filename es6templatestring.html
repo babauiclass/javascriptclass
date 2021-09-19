@@ -1,0 +1,33 @@
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <h1>es6 template string</h1>
+        <h1 id="container"></h1>
+        <h1 id="doubCon"></h1>
+        <script>
+            let name="bindu";
+            let lastName="bellamkonda";
+          //  let fullName = "Hi "+name+" "+lastName+ "welcome to javascript";
+          const dataObj = new Date();
+            let fullName = `Hi ${name} ${lastName} welcome to javascript ${dataObj}`;
+            document.getElementById("container").innerHTML=fullName;
+        
+            // function double(a){
+            //     return a*2;
+            // }
+
+            // const double=function (a){
+            //     return a*2;
+            // }
+            // const double=(a)=>{
+            //     return a*2;
+            // }
+            const double=(a)=>a*2;
+           
+            document.getElementById("doubCon").innerHTML=double(5);
+
+        </script>
+    </body>
+</html>
