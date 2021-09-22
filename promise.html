@@ -1,0 +1,159 @@
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <h1>promises</h1>
+        <div id="container"></div>
+        <h1 id="msg"></h1>
+        <h1 id="msgFail"></h1>
+        <h1 id="msg1"></h1>
+        <h1 id="msg2"></h1>
+        <h1 id="msg3"></h1>
+        <h1 id="msgallFail"></h1>
+
+        <h1>promiseAll</h1>
+        <h1 id="ms0"></h1>
+        <h1 id="ms1"></h1>
+        <h1 id="ms2"></h1>
+        <h1 id="msFail"></h1>
+        <script>
+            
+           /* function double(reqVal,callBack){
+               const resDoub=reqVal*2;
+                callBack(resDoub);
+               
+            }
+
+            const myResCallBack=(res)=>{
+                console.log("res:",res);
+                document.getElementById('container').innerHTML=res*2;
+            }
+            double(5,myResCallBack);*/
+          
+
+
+            const binduPromise = new Promise((resolve,reject)=>{
+                const task=false;
+                let cash;
+                if(task){
+                    cash=2000;
+                    resolve(cash); 
+                }else{
+                    cash=0;
+                    reject(cash); 
+                }
+            });
+
+            const bindSucsesFnc=(response)=>{
+                document.getElementById('container').innerHTML=response;
+            }
+            const binduFail=(response)=>{
+                document.getElementById('container').innerHTML="bindu Promise Fail--:"+response;
+            }
+          //  binduPromise.then(bindSucsesFnc,binduFail);
+            binduPromise.then(bindSucsesFnc).catch(binduFail);
+
+
+            const promise2 = new Promise((success,fail)=>{
+                const task=false;
+               (task) ? success("task success") : fail("task failed");
+            })
+
+            /*promise2.then((response)=>{
+                document.getElementById("msg").innerHTML=response;
+            },(response)=>{
+                document.getElementById("msgFail").innerHTML=response;
+            });*/
+
+            promise2.then((response)=>{
+                document.getElementById("msg").innerHTML=response;
+            }).catch((errResponse)=>{
+                document.getElementById("msgFail").innerHTML=errResponse;
+            });
+
+
+            //syentax
+            // (condition)? truestatement: elsestaement;
+            // const a=10;
+            // const b=20;
+
+            // (a>b)? "a is bing" : "b si big"
+         
+            const promiseOne = new Promise((resolve,reject)=>{
+                const task=true;
+                let obj;
+                if(task){
+                    obj={
+                        status:'sucess',
+                        amount:10000
+                    }
+                    setTimeout(()=>{resolve(obj)},1000);
+                }else{
+                    obj={
+                        status:'fail',
+                        amount:0
+                    }
+                    setTimeout(()=>{reject(obj)},1000);
+                }
+            })
+
+            const promiseTwo = new Promise((resolve,reject)=>{
+                const task=true;
+                let obj;
+                if(task){
+                    obj={
+                        status:'sucess',
+                        amount:100000
+                    }
+                    setTimeout(()=>{resolve(obj)},1000);
+                }else{
+                    obj={
+                        status:'fail',
+                        amount:0
+                    }
+                    setTimeout(()=>{reject(obj)},1000);
+                }
+            });
+
+            const promiseThree = new Promise((resolve,reject)=>{
+                const task=false;
+                let obj;
+                if(task){
+                    obj={
+                        status:'sucess',
+                        amount:200000
+                    }
+                    setTimeout(()=>{resolve(obj)},1000);
+                }else{
+                    obj={
+                        status:'fail',
+                        amount:0
+                    }
+                    setTimeout(()=>{reject(obj)},1000);
+                }
+            })
+            promiseOne.then((res)=>{
+                document.getElementById("msg1").innerHTML="response--1-:"+res.amount;
+                return promiseTwo;
+            }).then((res)=>{
+                document.getElementById("msg2").innerHTML="response--2-:"+res.amount;;
+                return promiseThree;
+            }).then((response)=>{
+                document.getElementById("msg3").innerHTML="response- All-3-:"+response.amount;
+            }).catch((err)=>{
+                document.getElementById("msgallFail").innerHTML="response- -Fail-:"+err.amount;
+            });
+
+            Promise.all([promiseOne,promiseTwo,promiseThree]).then((response)=>{
+                response.forEach((item,index)=>{
+                    console.log("item:",item,index);
+                    document.getElementById("ms"+index).innerHTML="promise --:"+index+":amount:"+item.amount;
+                })
+            }).catch((err)=>{
+                console.log("fail");
+                document.getElementById("msFail").innerHTML="all --response- -Fail-:"+err.amount;
+            })
+        </script>
+    </body>
+</html>
