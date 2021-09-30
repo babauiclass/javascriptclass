@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <script>
+            function getSum(){
+                var i=1;
+                var sum=0;
+                const tarVal=document.getElementById("targetNum").value;
+                while(i<=tarVal){
+                 sum=sum+i;
+                  i++;
+                }
+                document.getElementById("container").innerHTML=sum;
+            }
+        </script>
+    </head>
+    <body>
+        <input type="text" id="targetNum"> 
+        <button onclick="getSum()">SumValue</button>
+        <div id="container"></div>
+    </body>
+</html>
