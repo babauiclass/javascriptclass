@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <script src="./jsfiles/form.js"></script>
+    </head>
+    <body>
+        <h1>Form</h1>
+     <form name="userInfo" action="/user/userinfo.php" method="post" >
+        <label>Enter UserName:</label> <input type="text" name="username" onblur="validateUserName(this)"> <span style="color: red;" id="errNameMsg"> </span>  <br>
+        <label>Enter Password:</label> <input type="password" name="usepwd" onblur="validatePwd(this)"> <span style="color:red" id="errPwdMsg"></span>  <br>
+       <label>Hobbies:</label>  <input type="checkbox" name="hobbies" value="Cricket">Cricket
+        <input type="checkbox" name="hobbies" value="Kabadi"> Kabadi
+        <input type="checkbox" name="hobbies" value="Badmenton">Badmenton
+       <input type="checkbox" name="hobbies" value="Movies">Movies
+        <input type="checkbox" name="hobbies" value="Tennis">Tennis
+        <input type="button" name="hobiesSelectAll" value="SelectAll" onclick="selectAllHobies()">
+        <input type="button" name="hobiesSelectAll1" value="clearSelection" onclick="deselectAllHobies()">
+        
+        <br>
+        <input type="button" name="sub" value="showHobies" onclick="showHobiesList()">
+        <br>
+
+        <label>Select Gender</label> <input type="radio" name="gender" value="Male"> Male 
+        <input type="radio" name="gender" value="Female"> Female 
+        <input type="button" name="genderbtn" value="showGender" onclick="showSelectedGender()">
+        <br>
+        <label>Select Your Fruit </label>
+        <select id="mySelect" onchange="showSelectedFruit(this)">
+            <option value="apple">Apple</option>
+            <option value="banana">Banana</option>
+            <option value="mango">Mango</option>
+            <option value="orange">Orange</option>
+            <option value="grapes">Grapes</option>
+        </select>
+        <br>
+        <label>Select Your Car </label>
+        <select id="myCars" onchange="showSelectedCar(this)" size="5" multiple>
+            <option value="Swift">Swift</option>
+            <option value="Hyundai I 20">Hyundai I 20</option>
+            <option value="Swift Balino">Swift Balino</option>
+            <option value="Hyundai I 10 Grand">Hyundai I 10 Grand</option>
+            <option value="Mahindra Xuv300">Mahindra Xuv300</option>
+            <option value="Swift Dezire">Swift Dezire</option>
+            <option value="Hyundai Santro">Hyundai Santro</option>
+            <option value="Mahindra Xuv500">Mahindra Xuv500</option>
+        </select>
+        <br>
+        <label>Description</label>
+        <textarea  rows="6" cols="50" name="descrip" ></textarea> <input type="button" name="descbtn" onclick="showDesc()" value="showDescription">
+       <br> <label> Upload File</label> <input type="file" name="imgFile">
+
+       <input type="submit" value="submitForm" >
+     </form>
+     <div> Selected Hobbies</div>
+     <div id="hobiesList"> </div>
+     <div> Selected Gender</div>
+     <div id="genderInfo"> </div>
+     <div> Selected Fruit</div>
+     <div id="fruitInfo"> </div>
+     <span id="showDescMsg"></span>
+    </body>
+</html>
